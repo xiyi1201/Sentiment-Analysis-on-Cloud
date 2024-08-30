@@ -1,0 +1,41 @@
+aws:
+  profile: yixie-cloud
+  region: us-east-2
+  s3:
+    bucket_name: cloudengineeringproject-s3
+    data_key: processed_data.csv
+
+data:
+  balance_classes: true
+  max_sequence_length: 100
+  glove_embeddings_path: glove.6B.100d.txt
+  test_size: 0.2
+  random_state: 42
+
+eda:
+  processed_data_path: processed_data.csv
+  plots_output_dir: plots/
+  wordcloud:
+    width: 800
+    height: 400
+    background_color: white
+  numeric_distributions:
+    figsize: [16, 12]
+    bins: 50
+    kde: false
+    color: orange
+    yscale: log
+  top_words:
+    top_n: 10
+  ngram:
+    n: 2
+
+model:
+  epochs: 20
+  batch_size: 64
+
+output:
+  snn_model_path: models/snn_model.h5
+  cnn_model_path: models/cnn_model.h5
+  lstm_model_path: models/lstm_model.h5
+  eda_plots_path: plots/
